@@ -1,0 +1,16 @@
+{
+  "name": "header-compare",
+  "version": "1.0.0",
+  "description": "Compare request headers",
+  "main": "headers-compare.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daniel Gallo",
+  "license": "ISC",
+  "dependencies": {
+    "colors": "^1.1.2",
+    "deep-diff": "^0.3.8",
+    "request": "^2.83.0"
+  }
+}
