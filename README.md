@@ -4,4 +4,10 @@ A Node script that compares the response headers of two HTTP requests - one requ
 
 # Usage
 
+## Add required Node modules
+
+    npm install
+    
+## Run script
+
     node headers-compare.js
