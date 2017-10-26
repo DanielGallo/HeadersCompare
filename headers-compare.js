@@ -41,7 +41,7 @@ class Request {
 
     compare(cloudflareHeaders, directHeaders) {
         var differences = diff(directHeaders, cloudflareHeaders),
-            ignore = ['date'],
+            ignore = ['date'],  // Ignore these headers
             difference, msg, header;
 
         if (differences.length > 0) {
@@ -55,13 +55,13 @@ class Request {
                 if (ignore.indexOf(difference.path[0]) < 0) {
                     console.log('');
 
-                    if (difference.kind == 'D') {
+                    if (difference.kind == 'D') {   // Deleted
                         msg = 'Header Removed'.bgBlue + ': \t' + header;
                         console.log(msg);
 
                         msg = '\tValue: \t\t' + difference.lhs;
                         console.log(msg);
-                    } else if (difference.kind == 'E') {
+                    } else if (difference.kind == 'E') {     // Edited (header exists in both requests, but with different value)
                         msg = 'Header Difference'.bgBlue + ': \t' + header;
                         console.log(msg);
 
@@ -70,7 +70,7 @@ class Request {
 
                         msg = '\tAfter: \t\t' + difference.rhs;
                         console.log(msg);
-                    } else {
+                    } else {    // New header
                         msg = 'Header Addition'.bgBlue + ': \t' + header;
                         console.log(msg);
 
