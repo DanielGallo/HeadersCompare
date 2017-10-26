@@ -56,13 +56,13 @@ class Request {
                     console.log('');
 
                     if (difference.kind == 'D') {   // Deleted
-                        msg = 'Header Removed'.bgBlue + ': \t' + header;
+                        msg = 'Header Removed'.bgBlue.white + ': \t' + header;
                         console.log(msg);
 
                         msg = '\tValue: \t\t' + difference.lhs;
                         console.log(msg);
                     } else if (difference.kind == 'E') {     // Edited (header exists in both requests, but with different value)
-                        msg = 'Header Difference'.bgBlue + ': \t' + header;
+                        msg = 'Header Difference'.bgBlue.white + ': \t' + header;
                         console.log(msg);
 
                         msg = '\tBefore: \t' + difference.lhs;
@@ -71,7 +71,7 @@ class Request {
                         msg = '\tAfter: \t\t' + difference.rhs;
                         console.log(msg);
                     } else {    // New header
-                        msg = 'Header Addition'.bgBlue + ': \t' + header;
+                        msg = 'Header Addition'.bgBlue.white + ': \t' + header;
                         console.log(msg);
 
                         msg = '\tValue: \t\t' + difference.rhs;
